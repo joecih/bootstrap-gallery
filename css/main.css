@@ -1,0 +1,99 @@
+
+
+body {
+    background: darkgrey; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(darkgrey, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(darkgrey, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(darkgrey, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(darkgrey, white); /* Standard syntax */
+    z-index: 22;
+    height: 100%;
+    overflow: hidden;
+}
+
+div {
+    z-index: -1;
+}
+
+.page-header {
+    color: darkred;
+    font-size: 48px;
+    font-weight: bold;
+}
+.sub-header {
+    font-size: 38px;
+    color: red;
+    margin: 0 15px;
+}
+
+h2 {
+    -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+    font-size: 18px;
+}
+
+
+#image-bay {
+
+    position: absolute;
+    top: 32%;
+    left: 6%;
+    right: 6%;
+    /*border: 1px dotted red;*/
+    background-color: transparent;
+    
+}
+
+img {
+    box-shadow: 2px 2px 5px black;
+}
+
+.thumbnail {
+    padding: 0px;
+    background-color: transparent;
+    border: 0;
+}
+
+.navbar-default {
+    background: linear-gradient(darkgrey, transparent);
+    padding-bottom: 10px;
+}
+
+.scroll {
+    overflow: auto;
+    height: 100%;
+    padding: 0;
+    margin-left: 37px;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 1em;
+}
+
+.input-block {
+    position: relative;
+    /*border: 1px dotted red;*/
+        width: 80%;
+    margin: auto;
+}
+
+.form-control {
+    /*text-align: center;*/
+    width: 100%;
+    margin: auto;
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .col-xs-6 {
+        width: 100%;
+    }
+    #image-bay {
+        top: 40%;
+    }
+}
