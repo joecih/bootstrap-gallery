@@ -89,6 +89,18 @@ img {
     right: 20px;
 }
 
+.modal.and.carousel {
+  position: absolute;
+}
+
+.modal-body {
+    padding: 1px;
+}
+
+.item img {
+    border-radius: 8px;
+}
+
 @media screen and (max-width: 480px) {
     .col-xs-6 {
         width: 100%;

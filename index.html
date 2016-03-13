@@ -26,12 +26,14 @@
                     <div data-toggle="collapse" data-target="#demo">
                         <h2 class="text-center animated fadeIn">Searching for stock images has never been easier!</h2>
                         <div id="demo" class="collapse text-center">
-                            Add some search filtering options here !!<br>
-                            | Filter 1 | Filter 2 | Filter 3 |
+                            Add some search filtering options here !!
+                            <br> | Filter 1 | Filter 2 | Filter 3 |
+                            <br>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lightbox">Large modal</button>
                         </div>
                     </div>
                     <div class="input-block">
-                    <input type="text" class="form-control" placeholder=" Search the remote API database at Pixabay" onclick="this.value = '';" onchange="setSearchItem(this.value);"><span id="img-count" class="badge"></span>
+                        <input type="text" class="form-control" placeholder=" Search the remote API database at Pixabay" onclick="this.value = '';" onchange="setSearchItem(this.value);"><span id="img-count" class="badge"></span>
                     </div>
 
                 </div>
@@ -39,6 +41,32 @@
             <div id="image-bay" class="col-lg-10 scroll">
             </div>
         </div>
+        <div class="modal fade and carousel slide" id="lightbox">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ol class="carousel-indicators">
+                            <li data-target="#lightbox" data-slide-to="0" class="active"></li>
+                            <li data-target="#lightbox" data-slide-to="1"></li>
+                            <li data-target="#lightbox" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                        </div>
+                        <!-- /.carousel-inner -->
+                        <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#lightbox" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                    <!-- /.modal-body -->
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
 
 
     </div>
