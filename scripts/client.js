@@ -2,6 +2,10 @@ function setSearchItem(_searchItem) {
     grabRemoteImages(_searchItem);
 }
 
+/*
+*  Takes any string and pulls out the whole number only.
+*  - No splitting occurs so all numbers are concatenated into 1 large number.
+*/
 window.getWholeNumberFromString = function getWholeNumberFromString(_val) {
     var output = '';
     
@@ -17,24 +21,21 @@ window.getWholeNumberFromString = function getWholeNumberFromString(_val) {
     return output;
 }
 
-//$(".carousel-inner").append("<div class='item active'><img id='main-img' src='http://placehold.it/900x500/777/'></div>");
-
+// DOM READY - Section
 $(function() {
     var holdLargeImages = [];
 
     window.grabRemoteImages = function grabRemoteImages(_search) {
-        var API_KEY = '1496184-d38dc287ea5160f8806d04508';
-        $.getJSON("https://pixabay.com/api/?key=" + API_KEY + "&q=" + _search + "&image_type=photo&pretty=false", function(data) {
-
-
-            //$(".carousel-inner").append("<div class='item active'><img src='http://placehold.it/900x500/777/'></div>");
-
+        var API_KEY1 = '1496184-d38dc287ea5160f8806d04508';
+        $.getJSON("https://pixabay.com/api/?key=" + API_KEY1 + "&q=" + _search + "&image_type=photo&pretty=false", function(data) {
 
             for (var i = 0; i < data.hits.length; i++) {
 
                 if (i <= 50) {
 
-                    console.log("Width: " + data.hits[i].webformatWidth + " | Height: " + data.hits[i].webformatHeight + " | Count: " + i);
+                    //console.log("Width: " + data.hits[i].webformatWidth + " | Height: " + data.hits[i].webformatHeight + " | Count: " + i);
+                    
+                    // console.log("Large image url: " + data.hits[i].imageURL);
 
                     var _itemWidth = data.hits[i].webformatWidth;
                     var _itemHeight = data.hits[i].webformatHeight;
@@ -57,14 +58,13 @@ $(function() {
                 }
             }
 
-
-
+            // Selecting any image identifies that image as the active pic in the image slider
             $('img').click(function() {
 
                 var selectedImgID = $(this).attr('id');
                 var selectedImageNumber = getWholeNumberFromString(selectedImgID);
-                console.log("selectedImageNumber: " + selectedImageNumber);
-                console.log("Image click: " + $(this).attr('id') + " | Image to show: sel-" + selectedImgID);
+                // console.log("selectedImageNumber: " + selectedImageNumber);
+                // console.log("Image click: " + $(this).attr('id') + " | Image to show: sel-" + selectedImgID);
                 
                 $('.item').removeClass('active');
                 
@@ -76,6 +76,7 @@ $(function() {
         });
     }
 
+    // Main Logo animation on mouseover.
     $("#head").mouseenter(function() {
         $(this).animate({
             letterSpacing: "+=15px"
@@ -86,6 +87,4 @@ $(function() {
             letterSpacing: "-=15px"
         });
     });
-
-    //console.log("Value from string: " + getNumberFromString('a1.2B-9c'));
 });
